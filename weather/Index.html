@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"
+      integrity="sha512-tQYZBKe34uzoeOjY9jr3MX7R/mo7n25vnqbnrkskGr4D6YOoPYSpyafUAzQVjV6xAozAqUFIEFsCO4z8mnVBXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "Red",
+            "Blue",
+            "Yellow",
+            "Green",
+            "Purple",
+            "Orange",
+            "Gold",
+            "Pink",
+            "Magenta",
+            "Silver",
+            "Skyblue",
+            "Ivory",
+            "Aqua",
+            "Brown",
+            "Gray",
+            "rgb(191, 45, 61)",
+          ],
+          datasets: [
+            {
+              label: "Szavazatok száma",
+              data: [
+                12, 19, 3, 5, 14, 3, 7, 35, 42, 15, 36, 60, 38, 28, 40, 67,
+              ],
+              borderWidth: 3,
+              backgroundColor: [
+                "Red",
+                "Blue",
+                "Yellow",
+                "Green",
+                "Purple",
+                "Orange",
+                "Gold",
+                "Pink",
+                "Magenta",
+                "Silver",
+                "Skyblue",
+                "Ivory",
+                "Aqua",
+                "Brown",
+                "Gray",
+                "rgb(191, 45, 61)",
+              ],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+[
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+
+namespace WebServer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var server = new TcpListener(IPAddress.Parse("127.0.0.1"), 8080);
+
+            server.Start();
+            Console.WriteLine("Server started on port 8080. Waiting for a client...");
+
+            while (true)
+            {
+                using (var client = server.AcceptTcpClient())
+                {
+                    Console.WriteLine("Client connected. Processing request...");
+
+                    // Read the request from the client.
+                    var buffer = new byte[1024];
+                    var stream = client.GetStream();
+                    stream.Read(buffer, 0, buffer.Length);
+                    var request = Encoding.UTF8.GetString(buffer);
+                    Console.WriteLine(request);
+
+                    // Send a response to the client.
+                    var response = Encoding.UTF8.GetBytes("Hello, World!");
+                    stream.Write(response, 0, response.Length);
+                    Console.WriteLine("Response sent to the client.");
+                }
+            }
+        }
+    }
+}
+]
+
+[
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Game : MonoBehaviour
+{
+    public float playerSpeed = 5.0f;
+    public GameObject player;
+
+    private Vector3 playerPosition;
+    private Vector3 moveDirection = Vector3.zero;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerPosition = player.transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Get the input from the player.
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Calculate the movement direction and normalize it.
+        moveDirection = new Vector3(horizontalInput, verticalInput, 0);
+        moveDirection = moveDirection.normalized;
+
+        // Move the player in the direction.
+        playerPosition += moveDirection * playerSpeed * Time.deltaTime;
+        player.transform.position = playerPosition;
+    }
+}
+]
+
+[
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double num1, num2;
+    char operation;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    cout << "Enter the operation (+, -, *, /): ";
+    cin >> operation;
+
+    double result;
+
+    switch (operation)
+    {
+        case '+':
+            result = num1 + num2;
+            break;
+
+        case '-':
+            result = num1 - num2;
+            break;
+
+        case '*':
+            result = num1 * num2;
+            break;
+
+        case '/':
+            result = num1 / num2;
+            break;
+
+        default:
+            cout << "Invalid operation";
+            return 1;
+    }
+
+    cout << "Result: " << result << endl;
+
+    return 0;
+}
+]
+
+[
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+export class MyForm {
+  form = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]),
+  });
+
+  submit() {
+    if (this.form.valid) {
+      // Form is valid, do something with the form data
+      const formData = this.form.value;
+      console.log(formData);
+    } else {
+      // Form is invalid, show an error message
+      console.error('Form is invalid');
+    }
+  }
+}
+
+]
+
+[
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+]
+
+[
+using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+
+namespace MyWebServer
+{
+    public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            app.Run(context =>
+            {
+                return context.Response.WriteAsync("Hello World!");
+            });
+        }
+    }
+}
+
+]
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace MyDatabaseServer
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<MyDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MyDb")));
+
+            services.AddControllers();
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+    }
+}
+
+[
+
+]

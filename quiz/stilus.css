@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&family=Tilt+Neon&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: 'Tilt Neon', cursive;
+}
+
+#cimsor {
+  background-color: #dedede;
+  font-size: xx-large;
+  padding: 30px;
+  text-align: center;
+}
+
+#slider {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+button {
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-family: 'Tilt Neon', cursive;
+  padding: 5px;
+}
+
+#tarto {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}

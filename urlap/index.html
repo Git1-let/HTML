@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./stilus.css" />
+    <title>Űrlap</title>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td><label for="nev">Név: </label></td>
+          <td><input type="text" id="nev" placeholder="Szotyi" /></td>
+        </tr>
+        <tr>
+          <td><label for="kor">Kor: </label></td>
+          <td>
+            <input type="number" id="kor" min="0" max="150" placeholder="17" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="tantargy">Kedvenc tantárgy: </label></td>
+          <td>
+            <select id="tantargy" multiple size="4">
+              <option value="matek">Matematika</option>
+              <option value="magyar">Magyar nyelv és irodalom</option>
+              <option value="fizika">Fizika</option>
+              <option value="történelem">Történelem</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="tantargy">Szereted a matekot: </label></td>
+          <td>
+            <label for="igen">Igen: </label>
+            <input type="radio" name="matek" id="igen" value="igen" />
+            <label for="nem">Nem: </label>
+            <input type="radio" name="matek" id="nem" value="nem" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="tantargy">Kedvenc tanárok: </label></td>
+          <td>
+            <input type="checkbox" id="kata" name="kata" value="Kata tanárnő" />
+            <label for="kata">Kata tanárnő</label><br />
+            <input type="checkbox" id="niki" name="niki" value="Niki tanárnő" />
+            <label for="niki">Niki tanárnő</label><br />
+            <input
+              type="checkbox"
+              id="zsolt"
+              name="zsolt"
+              value="Zsolt tanár úr"
+            />
+            <label for="zsolt">Zsolt tanár úr</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button class="btn btn-danger mt-2" onclick="feldolgoz(event)">
+              Feldolgoz
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="./urlap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+input::placeholder {
+  color: purple;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+input {
+  height: 3em;
+}
